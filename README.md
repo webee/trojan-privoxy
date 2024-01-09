@@ -7,10 +7,11 @@ trojan client with privoxy for http proxy
 ```bash
 docker run \
     --name trojan-proxy \
-    -e REMOTE_ADDR="your host" \
+    -e REMOTE_ADDR="trojan server host" \
+    -e REMOTE_PORT=<trojan server port> \
     -e PASSWORD="your password" \
-    -p trojan_port:1086 \
-    -p privoxy_port:1087 \
+    -p <socks5_trojan_port>:1086 \
+    -p <http_privoxy_port>:1087 \
     -d \
-    andyzhshg/trojan-privoxy
+    webee/trojan-privoxy
 ```
